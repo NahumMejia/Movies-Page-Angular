@@ -28,8 +28,7 @@ export class NavbarComponent {
   public visible: boolean = false;
 
   menuItems = [
-    { label: 'Inicio', icon: 'pi pi-home', route: '/' },
-    { label: 'Buscar', icon: 'pi pi-search', route: '/search' },
-    { label: 'Populares', icon: 'pi pi-star', route: '/popular' },
+    { label: 'Home', icon: 'pi pi-home', route: '/' },
+    { label: 'Popular', icon: 'pi pi-star', route: '/popular' },
   ];
 }

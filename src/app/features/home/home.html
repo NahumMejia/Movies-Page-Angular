@@ -1,1 +1,15 @@
-<p>home works!</p>
+<!--//TO DO-->
+<h1>Movies now playing in theaters</h1>
+
+<div class="movies-grid">
+  @for (movie of movies; track movie.id) {
+    <div class="movie-card">
+      <img 
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" 
+        [alt]="movie.title"
+      />
+      <h3>{{ movie.title }}</h3>
+      <p>{{ movie.release_date }}</p>
+    </div>
+  }
+</div>
