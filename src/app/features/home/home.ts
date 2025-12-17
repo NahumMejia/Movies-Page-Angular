@@ -1,31 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../../shared/services/movies.service';
+import { Component, inject } from '@angular/core';
+import { MovieCardComponent } from "../../shared/components/movie-card-component/movie-card-component";
 import { Movie } from '../../shared/components/movie-card-component/interfaces/movie.interface';
-
+import { MoviesService } from '../../shared/services/movies.service';
+import { LoaderComponent } from "../../core/loader-component/loader-component";
+import { AsyncPipe } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [MovieCardComponent, LoaderComponent, AsyncPipe],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home implements OnInit {
-  public movies: Movie[] = [];
+export class Home {
+  movie: Movie[] = [];
+  readonly moviesService = inject(MoviesService);
 
-  constructor(private movieService: MoviesService) {}
-
-  ngOnInit(): void {
-    this.NowPlayingMovies();
-  }
-  //TO DO
-  private NowPlayingMovies(): void {
-    this.movieService.getMoviesNowPlaying().subscribe({
-      next: (resp) => {
-        this.movies = resp.results;
-      },
-      error: (err) => {
-        console.error('Error cargando películas:', err);
-      },
-    });
-  }
+  protected readonly moviesNowPlaying = this.moviesService.getMoviesNowPlaying();
 }

@@ -20,9 +20,9 @@ export class MoviesService {
 
   //TO DO
   getMoviesNowPlaying(): Observable<MovieListResponse> {
-    const url = `${this.BASE_URL}/movie/now_playing?language=en-US&page=1`;
+    const URL = `${this.BASE_URL}/movie/now_playing?language=en-US&page=1`;
 
-    return this.http.get<MovieListResponse>(url, {
+    return this.http.get<MovieListResponse>(URL, {
       headers: this.HEADER,
     });
   }
