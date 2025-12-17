@@ -1,9 +1,25 @@
 @use "primeicons/primeicons.css";
 @use 'primeflex/primeflex.scss';
+@use './styles/fonts';
 
-h1{
-    color: gray;
+body {
+  font-family: "avenir", sans-serif;
+  background-color: #f8f8f8b4;
+  min-height: 100dvh;
 }
-h3{
-    color: gray; 
+
+body .no-scroll{
+    overflow-x: hidden;
+}
+
+body .onoma{
+    font-family: "onoma";
+}
+
+body .averi{
+    font-family: "averi";
+}
+
+body .designer{
+    font-family: "designer";
 }

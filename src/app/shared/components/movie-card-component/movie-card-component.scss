@@ -1,0 +1,36 @@
+.movie-card {
+  height: 36rem;
+  width: 20rem;
+  background: black;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.poster-image {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+  display: block;
+}
+
+::ng-deep .p-card {
+  border-radius: 0 !important;
+}
+
+::ng-deep .p-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+
+  font-size: 17px !important;
+  text-align: center;
+  color: white;
+
+  overflow: hidden;
+  padding: 0 1rem;
+}
