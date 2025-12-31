@@ -1,4 +1,3 @@
-// navbar-component.ts
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { DrawerModule } from 'primeng/drawer';
@@ -29,5 +28,6 @@ export class NavbarComponent {
 
   menuItems = [
     { label: 'Home', icon: 'pi pi-home', route: '/' },
+    { label: 'Popular', icon: 'pi pi-star', route: '/popular' },
   ];
 }

@@ -1,18 +1,18 @@
 import { Component, inject } from '@angular/core';
 import { MovieCardComponent } from "../../shared/components/movie-card-component/movie-card-component";
-import { Movie } from '../../shared/components/movie-card-component/interfaces/movie.interface';
-import { MoviesService } from '../../shared/services/movies.service';
 import { LoaderComponent } from "../../core/loader-component/loader-component";
+import { MoviesService } from '../../shared/services/movies.service';
+import { Movie } from '../../shared/components/movie-card-component/interfaces/movie.interface';
 import { AsyncPipe } from '@angular/common';
-@Component({
-  selector: 'app-home',
-  imports: [MovieCardComponent, LoaderComponent, AsyncPipe],
-  templateUrl: './home.html',
-  styleUrl: './home.scss',
-})
-export class Home {
-  public movie: Movie[] = [];
-  public readonly moviesService = inject(MoviesService);
 
-  protected readonly moviesNowPlaying = this.moviesService.getMoviesNowPlaying();
+@Component({
+  selector: 'app-popular',
+  imports: [MovieCardComponent, LoaderComponent, AsyncPipe],
+  templateUrl: './popular.html',
+  styleUrl: './popular.scss',
+})
+export class Popular {
+  public readonly moviesService = inject(MoviesService);
+  public movie: Movie[] = [];
+  protected popularMovies = this.moviesService.getPopularMovies();
 }

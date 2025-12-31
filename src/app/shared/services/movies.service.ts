@@ -24,4 +24,12 @@ export class MoviesService {
       headers: this.HEADER,
     });
   }
+
+  getPopularMovies():Observable<MovieListResponse>{
+    const URL = `${this.BASE_URL}/movie/popular?language=en-US&page=1`;
+
+    return this.http.get<MovieListResponse>(URL, {
+      headers: this.HEADER,
+    });
+  }
 }
