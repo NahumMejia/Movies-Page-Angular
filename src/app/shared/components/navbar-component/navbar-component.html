@@ -1,20 +1,17 @@
 <p-toolbar>
     <ng-template #start>
-        <div class="flex align-items-center gap-3">
+        <div class="flex align-items-center">
             <p-button 
                 (click)="visible = true" 
                 icon="pi pi-bars" 
                 [text]="true" 
                 severity="secondary"
             />
-            <div class="flex align-items-center gap-2">
-                <span class="text-xl text-500">Movies Nahum</span>
-            </div>
         </div>
     </ng-template>
     
-    <ng-template #center>
-        <p-iconfield iconPosition="left">
+    <ng-template #end>
+        <p-iconfield iconPosition="right">
             <p-inputicon class="pi pi-search" />
             <input 
                 type="text" 
@@ -23,25 +20,19 @@
             />
         </p-iconfield>
     </ng-template>
-    
-    <ng-template #end>
-    </ng-template>
 </p-toolbar>
 
-<p-drawer 
-    [(visible)]="visible" 
-    header="Menú"
->
+<p-drawer [(visible)]="visible" header="Menu">
     <div class="flex flex-column gap-2">
         @for (item of menuItems; track $index) {
             <a 
-            [routerLink]="item.route"
-            (click)="visible = false"
-            class="flex align-items-center gap-3 p-3 text-500 border-round hover:surface-100 cursor-pointer no-underline text-color"
-        >
-            <i [class]="item.icon + ' text-xl text-500'"></i>
-            <span class="font-medium text-500">{{ item.label }}</span>
-        </a>
+                [routerLink]="item.route"
+                (click)="visible = false"
+                class="flex align-items-center gap-3 p-3 border-round cursor-pointer no-underline"
+            >
+                <i [class]="item.icon + ' text-xl text-500'"></i>
+                <span class="font-medium text-500">{{ item.label }}</span>
+            </a>
         }
     </div>
 </p-drawer>

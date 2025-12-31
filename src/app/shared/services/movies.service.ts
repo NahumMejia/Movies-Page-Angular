@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { MovieListResponse } from '../components/movie-card-component/interfaces/movie.interface';
+import { map, Observable, tap } from 'rxjs';
+import { Movie, MovieListResponse } from '../components/movie-card-component/interfaces/movie.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -17,8 +17,6 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {}
 
-
-  //TO DO
   getMoviesNowPlaying(): Observable<MovieListResponse> {
     const URL = `${this.BASE_URL}/movie/now_playing?language=en-US&page=1`;
 

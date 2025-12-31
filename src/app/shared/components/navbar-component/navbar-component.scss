@@ -1,0 +1,75 @@
+:host ::ng-deep {
+
+  .p-toolbar {
+    height: 64px;
+    padding: 0 1rem;
+    background: var(--bg-surface);
+    border: none !important;
+  }
+
+  .p-toolbar .p-button {
+    border-radius: 12px;
+    transition: background-color .2s ease, transform .15s ease;
+  }
+
+  .p-toolbar .p-button:hover {
+    background: rgba(124, 140, 255, 0.14);
+    transform: translateY(-1px);
+  }
+
+  .p-iconfield {
+    width: min(520px, 100%);
+  }
+
+  .p-iconfield .p-inputtext {
+    height: 44px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    padding-left: 2.6rem;
+    transition: background-color .2s ease, border-color .2s ease;
+  }
+
+  .p-iconfield .p-inputtext:hover {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.14) !important;
+  }
+
+  .p-iconfield .p-inputtext:focus,
+  .p-iconfield .p-inputtext:focus-visible {
+    background: rgba(255,255,255,0.10) !important;
+    border-color: rgba(124, 140, 255, 0.55) !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .p-iconfield .p-inputicon {
+    opacity: .85;
+  }
+
+  .p-drawer {
+    background: var(--bg-surface);
+    border: 0 !important;
+  }
+
+  .p-drawer a {
+    border-radius: 14px;
+    transition: background-color .2s ease, transform .15s ease;
+  }
+
+  .p-drawer a:hover {
+    background: rgba(124, 140, 255, 0.12);
+    transform: translateX(4px);
+  }
+
+    .p-drawer a i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+  .p-drawer a:hover i {
+    color: var(--accent);
+    opacity: 1;
+  }
+}

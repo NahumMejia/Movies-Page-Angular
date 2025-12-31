@@ -2,24 +2,41 @@
 @use 'primeflex/primeflex.scss';
 @use './styles/fonts';
 
+:root {
+  --bg-main: #0f1115;
+  --bg-surface: rgba(25, 28, 35, 0.85);
+  --border-soft: #2a2f3a;
+  --accent: #7c8cff;
+}
+
 body {
   font-family: "avenir", sans-serif;
-  background-color: #f8f8f8b4;
+  background-color: var(--bg-main);
+  color: #eaeaf0;
   min-height: 100dvh;
 }
 
-body .no-scroll{
-    overflow-x: hidden;
+.p-inputtext {
+  background-color: #1a1d25 !important;
+  color: #eaeaf0 !important;
+  border-color: var(--border-soft) !important;
+  font-family: inherit !important;
 }
 
-body .onoma{
-    font-family: "onoma";
+.p-inputtext::placeholder {
+  color: rgba(234, 234, 240, 0.5);
 }
 
-body .averi{
-    font-family: "averi";
+.p-inputtext:focus,
+.p-inputtext:focus-visible {
+  border-color: var(--accent) !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-body .designer{
-    font-family: "designer";
+.p-toolbar,
+.p-drawer {
+  background-color: var(--bg-surface);
+  border: none !important;
+  box-shadow: none !important;
 }

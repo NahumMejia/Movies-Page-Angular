@@ -29,6 +29,5 @@ export class NavbarComponent {
 
   menuItems = [
     { label: 'Home', icon: 'pi pi-home', route: '/' },
-    { label: 'Popular', icon: 'pi pi-star', route: '/popular' },
   ];
 }
