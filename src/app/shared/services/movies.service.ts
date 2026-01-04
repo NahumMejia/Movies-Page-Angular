@@ -32,4 +32,12 @@ export class MoviesService {
       headers: this.HEADER,
     });
   }
+
+  getTopRatedMovies():Observable<MovieListResponse>{
+    const URL = `${this.BASE_URL}/movie/top_rated`;
+
+    return this.http.get<MovieListResponse>(URL, {
+      headers: this.HEADER,
+    });
+  }
 }

@@ -1,0 +1,17 @@
+<div class="movies-header">
+  <h1 class="movies-title">Top Rated Movies in TMDB</h1>
+</div>
+
+<div class="grid p-5 pt-2">
+  @if (topRatedMovies | async; as data) {
+    @for (movie of data.results; track movie.id) {
+      <div class="col-12 md:col-6 lg:col-4 p-3 flex justify-content-center">
+        <app-movie-card-component [movie]="movie" />
+      </div>
+    }
+  } @else {
+    <div class="col-12 flex justify-content-center align-items-center" style="min-height: 400px;">
+      <app-loader-component />
+    </div>
+  }
+</div>

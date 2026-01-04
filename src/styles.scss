@@ -34,7 +34,12 @@ body {
   outline: none !important;
 }
 
-.p-toolbar,
+.p-toolbar {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .p-drawer {
   background-color: var(--bg-surface);
   border: none !important;

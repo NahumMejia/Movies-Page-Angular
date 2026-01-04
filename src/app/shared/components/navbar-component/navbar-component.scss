@@ -2,9 +2,14 @@
 
   .p-toolbar {
     height: 64px;
-    padding: 0 1rem;
-    background: var(--bg-surface);
     border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .p-toolbar-start,
+  .p-toolbar-end {
+    padding: 0 1rem;
   }
 
   .p-toolbar .p-button {
@@ -62,11 +67,11 @@
     transform: translateX(4px);
   }
 
-    .p-drawer a i {
+  .p-drawer a i {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    }
+  }
 
   .p-drawer a:hover i {
     color: var(--accent);
