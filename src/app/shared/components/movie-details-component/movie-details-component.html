@@ -1,0 +1,15 @@
+<!--TO DO: FINISH THIS-->
+<div class="movies-header">
+  <h1 class="movies-title">Movie</h1>
+</div>
+
+<div class="movies-header">
+      <img 
+      [alt]="movie?.title"
+      width="500" 
+      height="750"
+      class="poster-image" 
+      [ngSrc]="'https://image.tmdb.org/t/p/w500' + movie?.poster_path"
+      priority
+    />
+</div>

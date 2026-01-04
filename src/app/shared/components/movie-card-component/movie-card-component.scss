@@ -16,6 +16,9 @@
   object-fit: cover;
   display: block;
 }
+.poster-image:hover {
+  cursor: pointer;
+}
 
 ::ng-deep .p-card {
   border-radius: 0 !important;

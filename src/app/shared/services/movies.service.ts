@@ -40,4 +40,12 @@ export class MoviesService {
       headers: this.HEADER,
     });
   }
+
+  getMovieDetails(movie_id:number):Observable<Movie>{
+    const URL = `${this.BASE_URL}/movie/${movie_id}`;
+
+    return this.http.get<Movie>(URL, {
+      headers: this.HEADER,
+    });
+  }
 }

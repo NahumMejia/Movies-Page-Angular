@@ -1,4 +1,8 @@
-<p-card class="movie-card" [style]="{ width: '20rem', overflow: 'hidden' }">
+<p-card 
+  class="movie-card" 
+  [style]="{ width: '20rem', overflow: 'hidden' }"
+  (click)="goToMovieDetailsPage()"
+  >
   <ng-template #header>
     <img 
       [alt]="movie.title"
