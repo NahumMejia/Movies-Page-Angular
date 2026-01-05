@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable, tap } from 'rxjs';
-import { Movie, MovieListResponse } from '../components/movie-card-component/interfaces/movie.interface';
+import { Movie, MovieListResponse, MovieSearchResponse } from '../components/movie-card-component/interfaces/movie.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +25,7 @@ export class MoviesService {
     });
   }
 
-  getPopularMovies():Observable<MovieListResponse>{
+  getPopularMovies(): Observable<MovieListResponse> {
     const URL = `${this.BASE_URL}/movie/popular?language=en-US&page=1`;
 
     return this.http.get<MovieListResponse>(URL, {
@@ -33,7 +33,7 @@ export class MoviesService {
     });
   }
 
-  getTopRatedMovies():Observable<MovieListResponse>{
+  getTopRatedMovies(): Observable<MovieListResponse> {
     const URL = `${this.BASE_URL}/movie/top_rated`;
 
     return this.http.get<MovieListResponse>(URL, {
@@ -41,11 +41,25 @@ export class MoviesService {
     });
   }
 
-  getMovieDetails(movie_id:number):Observable<Movie>{
+  getMovieDetails(movie_id: number): Observable<Movie> {
     const URL = `${this.BASE_URL}/movie/${movie_id}`;
 
     return this.http.get<Movie>(URL, {
       headers: this.HEADER,
+    });
+  }
+
+  searchMovies(query: string, page: number = 1): Observable<MovieSearchResponse> {
+    const URL = `${this.BASE_URL}/search/movie`;
+
+    return this.http.get<MovieSearchResponse>(URL, {
+      headers: this.HEADER,
+      params: {
+        query: query,
+        page: page.toString(),
+        include_adult: 'false',
+        language: 'en-US',
+      },
     });
   }
 }

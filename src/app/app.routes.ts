@@ -3,6 +3,7 @@ import { Home } from './features/home/home';
 import { Popular } from './features/popular/popular';
 import { TopRated } from './features/top-rated/top-rated';
 import { MovieDetailsComponent } from './shared/components/movie-details-component/movie-details-component';
+import { MovieSearchComponent } from './features/movies-search/movies-search';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'movie/:id',
     component: MovieDetailsComponent,
+  },
+  {
+    path: 'search',
+    component: MovieSearchComponent,
   },
 ];

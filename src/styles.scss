@@ -77,3 +77,22 @@ body {
     color: #ff5252 !important;
   }
 }
+
+// FloatLabel styles
+.p-floatlabel {
+  label {
+    color: rgba(234, 234, 240, 0.6) !important;
+    background-color: transparent !important;
+  }
+
+  input:focus ~ label,
+  input.p-filled ~ label,
+  textarea:focus ~ label,
+  textarea.p-filled ~ label,
+  .p-inputwrapper-focus ~ label,
+  .p-inputwrapper-filled ~ label {
+    color: var(--accent) !important;
+    background-color: var(--bg-main) !important;
+    padding: 0 4px !important;
+  }
+}

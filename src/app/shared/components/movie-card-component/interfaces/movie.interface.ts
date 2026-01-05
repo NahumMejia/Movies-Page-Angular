@@ -32,3 +32,9 @@ export interface Genre {
   id: number;
   name: string;
 }
+export interface MovieSearchResponse {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+}

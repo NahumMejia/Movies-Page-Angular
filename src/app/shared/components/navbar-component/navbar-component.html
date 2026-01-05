@@ -11,14 +11,23 @@
     </ng-template>
     
     <ng-template #end>
-        <p-iconfield iconPosition="right">
-            <p-inputicon class="pi pi-search" />
-            <input 
-                type="text" 
-                pInputText 
-                placeholder="Search movies" 
+        <div class="flex gap-2 align-items-end">
+            <p-floatlabel variant="on">
+                <input 
+                    pInputText 
+                    id="search_input"
+                    autocomplete="off"
+                    [(ngModel)]="searchQuery"
+                    (keyup.enter)="onSearch()" />
+                <label for="search_input">Search movies</label>
+            </p-floatlabel>
+            <p-button 
+                icon="pi pi-search" 
+                (click)="onSearch()"
+                [text]="true"
+                severity="secondary"
             />
-        </p-iconfield>
+        </div>
     </ng-template>
 </p-toolbar>
 

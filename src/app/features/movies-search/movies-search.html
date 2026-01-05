@@ -1,0 +1,21 @@
+<div class="movies-header">
+  <h1 class="movies-title">Search results for: "{{ searchQuery }}"</h1>
+</div>
+
+<div class="grid p-5 pt-2">
+  @if (isLoading) {
+    <div class="col-12 flex justify-content-center align-items-center">
+      <app-loader-component />
+    </div>
+  } @else if (searchResults.length === 0 && searchQuery) {
+    <div class="col-12 flex justify-content-center align-items-center">
+      <p class="text-xl text-500">No movies found</p>
+    </div>
+  } @else {
+    @for (movie of searchResults; track movie.id) {
+      <div class="col-12 md:col-6 lg:col-4 p-3 flex justify-content-center">
+        <app-movie-card-component [movie]="movie" />
+      </div>
+    }
+  }
+</div>
