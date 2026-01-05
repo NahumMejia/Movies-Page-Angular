@@ -50,11 +50,10 @@
               }
 
               <p-divider layout="vertical" />
-
               @if (movie.release_date) {
                 <div class="flex align-items-center gap-2">
                   <i class="pi pi-language"></i>
-                  <p-chip>{{movie.original_language.toUpperCase()}}</p-chip>
+                  {{movie.original_language | originLanguagePipe}}
                 </div>
               }
 

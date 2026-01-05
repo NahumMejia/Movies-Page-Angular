@@ -8,10 +8,11 @@ import { TagModule } from 'primeng/tag';
 import { Card } from "primeng/card";
 import { ChipModule } from 'primeng/chip';
 import { DividerModule } from 'primeng/divider';
+import {OriginLanguagePipe } from '../../pipes/origin-language-pipe-pipe';
 
 @Component({
   selector: 'app-movie-details-component',
-  imports: [NgOptimizedImage, AsyncPipe, TagModule, Card, ChipModule, DividerModule, DatePipe, ],
+  imports: [NgOptimizedImage, AsyncPipe, TagModule, Card, ChipModule, DividerModule, DatePipe, OriginLanguagePipe],
   templateUrl: './movie-details-component.html',
   styleUrl: './movie-details-component.scss',
 })
